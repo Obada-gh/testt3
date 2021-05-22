@@ -15,14 +15,10 @@ app.use(express.static('./public'));
 app.use(express.urlencoded({extended:true}));
 app.set('view engine','ejs');
 
-const PORT = process.env.PORT || 7000;
+
 const clinet = new pg.Client({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
 
-clinet.connect().then(()=>{
-  app.listen(PORT,()=>{
-    console.log(`i am on port ${PORT}`);
-  });
-});
+
 
 app.get('/',(req,res)=>{
   let url = `https://digimon-api.vercel.app/api/digimon`;
@@ -99,6 +95,13 @@ app.delete('/delete/:id',(req,res)=>{
 
 });
 
+const PORT = process.env.PORT || 7000;
+
+clinet.connect().then(()=>{
+  app.listen(PORT,()=>{
+    console.log(`i am on port ${PORT}`);
+  });
+});
 
 
 
