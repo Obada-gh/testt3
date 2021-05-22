@@ -16,7 +16,7 @@ app.use(express.urlencoded({extended:true}));
 app.set('view engine','ejs');
 
 
-const clinet = new pg.Client({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
+const clinet = new pg.Client(process.env.DATABASE_URL);
 
 
 
