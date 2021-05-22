@@ -16,7 +16,7 @@ app.use(express.urlencoded({extended:true}));
 app.set('view engine','ejs');
 
 const PORT = process.env.PORT || 7000;
-const clinet = new pg.Client(process.env.DB_URL);
+const clinet = new pg.Client(process.env.DATABASE_URL);
 
 clinet.connect().then(()=>{
   app.listen(PORT,()=>{
