@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css.css">
+</head>
+<body>
+   
+
+      
+            <p>name <%=records.name%></p>
+            <img src="<%=records.img%>" alt="">
+            <p>level <%=records.level%></p>
+            
+         
+            
+     
+            <form action="/delete/<%=records.id%>?_method=delete " method="POST">
+                <button>delete</button>
+            </form>
+
+        <form action="/update/<%=records.id%>?_method=put" method="POST">
+            <input type="text" name="name" value="<%=records.name%>">
+            <input type="text" name="img" value="<%=records.img%>">
+            <input type="text" name="level" value="<%=records.level%>">
+    
+            <button>update</button>
+        </form>
+        
+       
+</body>
+</html>

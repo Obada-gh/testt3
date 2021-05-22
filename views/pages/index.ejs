@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css.css">
+</head>
+<body>
+    <% digimonMap.forEach(element => { %>
+        <form action="/addTofav" method="POST">
+            <p>name <%=element.name%></p>
+            <img src="<%=element.img%>" alt="">
+            <p>level <%=element.level%></p>
+            
+            <input type="hidden" name="name" value="<%=element.name%>">
+            <input type="hidden" name="img" value="<%=element.img%>">
+            <input type="hidden" name="level" value="<%=element.level%>">
+
+            <button>addTofav</button>
+            
+        </form>
+        
+        
+     
+    <% }) %>
+</body>
+</html>
